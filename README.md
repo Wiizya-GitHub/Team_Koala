@@ -1,6 +1,6 @@
 # Team_Koala
 
-Coline Lefevbre lefevbre.coline@orange.fr
+Coline Lefebvre lefebvre.coline@orange.fr
 
 Réhane Migan rehanemigan@gmail.com
 
