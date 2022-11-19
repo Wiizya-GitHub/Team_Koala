@@ -1,0 +1,96 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+    background-color:#100C2D;
+}
+header{
+    background-color: #181341;
+    
+}
+
+nav{
+    width: 100%;
+    background: #181341;
+}
+
+.main-nav{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: auto;
+}
+
+.main-nav a{
+    margin: 10px;
+    color: white;
+    display: block; 
+    padding: 15px; 
+    text-decoration: none; 
+}
+
+.main-nav li{
+    display: flex;
+    align-items: center;
+    font-family: 'Futura', sans-serif;
+}
+
+
+.main-nav li:hover{
+    background-color: #181341;
+
+}
+
+.main-nav li:first-child:hover{ 
+    background-color: none;
+}
+
+
+.card_NFT{
+    display: flex;
+    flex-direction: row;
+    margin : 45px; 
+}
+.card_nft{
+    background-color:#D9D9D9;
+    width: 300px;
+    height: 450px;
+    border-radius: 20px;
+    margin: 5em auto;
+}
+
+.card_img {
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+    width: 200px;
+}
+
+.card_text{
+    text-align: center;
+    color: black;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.description{
+    font-size: small
+
+}
+
+
