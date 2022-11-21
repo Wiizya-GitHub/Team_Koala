@@ -34,6 +34,7 @@ nav{
     list-style: none;
     padding: 0;
     margin: auto;
+    margin-left: 18%;
 }
 
 .main-nav a{
@@ -65,13 +66,21 @@ nav{
     display: flex;
     flex-direction: row;
     margin : 45px; 
+    flex-wrap: wrap;
+    align-items: center;
 }
 .card_nft{
-    background-color:#D9D9D9;
+    
     width: 300px;
     height: 450px;
     border-radius: 20px;
     margin: 5em auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card_nft>* {
+    flex: 1 1 160px;
 }
 
 .card_img {
@@ -79,6 +88,7 @@ nav{
     text-align: center;
     margin: auto;
     width: 200px;
+    margin-left: 30%;
 }
 
 .card_text{
@@ -86,11 +96,75 @@ nav{
     color: black;
     width: 90%;
     margin: 0 auto;
+    
+    
+}
+
+button{
+    margin-left: 30%;
+    margin-top: 5%;
+    width: 35%;
+    height: 20%;
+    background-color:#00ce7b;
+    border-radius: 5px;
+    border:none;
+
 }
 
 .description{
     font-size: small
 
 }
+
+
+.desc{
+    color: white;
+    margin-left: 30%;
+}
+
+label, #toggle
+{
+    display: none;
+}
+ 
+@media all and (max-width: 991px)
+{
+    nav
+    {
+        height: 60px;
+    }
+ 
+    nav 
+    {
+        display: none;
+        flex-direction: column;
+        background: #48435C;
+        height: 220px;
+    }
+ 
+    nav  a {
+        width: 50%;
+    }
+ 
+    label 
+    {
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+ 
+    #toggle:checked + nav {
+        display: flex;
+    }
+}
+
+
+
+
 
 
