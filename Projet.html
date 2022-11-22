@@ -9,36 +9,28 @@
     <link rel="stylesheet" href="main.css" />
 </head>
 <script>
-    function changeClass(button) {
-    var elements = button.parentNode.getElementsByClassName('card-single');
-    // OU (si tu as plusieurs noms de classes commencant par 'card')
-    var elements = button.parentNode.querySelectorAll("div[class^='card']")
-    for (var i = 0; i < elements.length; i++) {
-        if (elements[i].className == "card-single") {
-            elements[i].className += " rotated";
-        }
-        else if (elements[i].className == "card-group") {
-            elements[i].className += " rotated";
-        }
-        else {
-            elements[i].className = "card-single";
-        }
-    }
-    }
-</script>
+    function search(){
+    const searchBar =document.querySelector("#searchbar")
 
-<script>
-    function move_card(){
-        VanillaTilt.init(document.querySelectorAll(".js-tilt"),{
-        max: 30,
-        speed: 600,
-        scale: 1,
-        transition: true,
-        easing: "cubic-bezier(.03,.98,.52,.99)",
-        perspective: 600
-        });    
+    searchBar.addEventListener("keyup" , (e) =>{
+    const searchedLetters = e.target.value;
+    const cards = document.querySelectorAll(".card_nft");
+    filterElements(searchedLetters,cards);
+        })
     }
 
+
+    function filterElements(letters, elements){
+        if(letters.length >= 1){
+            for(let i= 0; i < elements.length; i++){
+                if(elements[i].textContent.toLowerCase().includes(letters)){
+                    elements[i].style.display = "block";
+                }else{
+                    elements[i].style.display = "none";
+                }
+            }
+        }
+    }
 </script>
 <header>
     	
@@ -66,10 +58,19 @@
     </nav>
 </header>
 <body>
-    <div class="flipcard">
-        <div class="card-single">
-            <div class="front face">
-                <!-- contenu de la face avant de la carte -->
+    <input id="searchbar" onkeyup="search()" type="text"name="search" placeholder="Recherche un Nft">
+    <div class="card">
+		<div class="card__inner">
+			<div class="card__face card__face--front">
+
+			</div>
+			<div class="card__face card__face--back">
+				<div class="card__content">
+						<h2>test</h2>
+				</div>
+			</div>
+		</div>
+	</div>
                 <div class="card_NFT" id="nft">
                     <script>
                         async function getNFT() {
@@ -81,7 +82,6 @@
                         })
                         .catch((e) => {
                             console.error(e)
-                            console.error('Could not talk to OpenSea')
                             return null
                         })
                 
@@ -91,64 +91,52 @@
                         const { name, image_url, description, permalink } = nft
                 
                         const newElement = document.createElement('div')
+                    
+            
                         newElement.innerHTML = `
+                        <div class="card">
+                            <div class="card__inner" id="test">
+                                <div class="card__face card__face--front">
+                                    <div class="card_nft card__face--front">
+                                        <img class="card_img" src ="${image_url}">
+                                        <div class="card_text">
+                                            <p class="desc"> ${name}</p>
+                                            <p class="description"> ${description}</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card__face card__face--back">
+                                    <div class="card_nft">
+                                        <div class="card_text">
+                                            <p class="description"> ${description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card_nft">
                                 <img class="card_img" src ="${image_url}">
                                 <div class="card_text">
                                     <p class="desc"> ${name}</p>
-                                    <button onclick="changeClass(this);"> Voir plus</button>
+                                    <p class="description"> ${description}</p>
                                 </div>
                             </div>
                         `
-                
+                        const carte = document.querySelector(".card__inner");
+                        newElement.addEventListener("click",
+                            function (e) {
+                            carte.classList.toggle('is-flipped');
+                            });
+                        
                         osContainer.appendChild(newElement)
                         })
                     }
                     getNFT()
-                    </script>
-                    
+                    </script>        
                 </div>
+                
             </div>
-            <div class="back face">
-            <!-- contenu de la face arrière de la carte -->
-            <div class="card_NFT" id="nft">
-                <script>
-                    async function getNFT() {
-                    const osContainer = document.getElementById('nft')
-                    const items = await fetch(`https://awesome-nft-app.herokuapp.com/`)
-                    .then((res) => res.json())
-                    .then((res) => {
-                        return res.assets
-                    })
-                    .catch((e) => {
-                        console.error(e)
-                        console.error('Could not talk to OpenSea')
-                        return null
-                    })
-            
-                    if (items.length === 0) { return }
-            
-                    items.forEach((nft) => {
-                    const { name, image_url, description, permalink } = nft
-            
-                    const newElement = document.createElement('div')
-                    newElement.innerHTML = `
-                    <div class="card_nft">
-                            <div class="card_text">
-                                <p class="description"> ${description}</p>
-                                <button onclick="changeClass(this);"> Voir plus</button>
-                            </div>
-                        </div>
-                    `
-                    console.log(this)
-                    osContainer.appendChild(newElement)
-                    })
-                }
-                </script>
-            </div>
-            </div>
-        </div>
-    </div> 
 </body>
 
 <footer>
