@@ -95,7 +95,7 @@ nav{
 
 .card_text{
     text-align: center;
-    color: black;
+    color: white;
     width: 90%;
     margin: 0 auto;
     
@@ -104,7 +104,8 @@ nav{
 
 
 .description{
-    font-size: small
+    font-size: small;
+    color: white;
 
 }
 .desc{
@@ -179,7 +180,7 @@ label, #toggle
 
   
   .card {
-    margin: 100px auto 0;
+    margin: 50px auto 0;
     width: 400px;
     height: 600px;
     perspective: 1000px;
@@ -211,7 +212,7 @@ label, #toggle
   }
   
   .card__face--front {
-    background-color: blue;
+    background-color: #025981;
     align-items: center;
     justify-content: center;
   }
@@ -222,7 +223,7 @@ label, #toggle
   }
   
   .card__face--back {
-    background-color: green;
+    background-color: #207a63;
     transform: rotateY(180deg);
   }
   
