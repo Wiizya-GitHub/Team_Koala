@@ -68,6 +68,7 @@ nav{
     margin : 45px; 
     flex-wrap: wrap;
     align-items: center;
+    column-gap: 30px;
 }
 .card_nft{
     
@@ -77,6 +78,7 @@ nav{
     margin: 5em auto;
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .card_nft>* {
@@ -86,9 +88,9 @@ nav{
 .card_img {
     border-radius: 20px;
     text-align: center;
-    margin: auto;
+    
     width: 200px;
-    margin-left: 30%;
+    
 }
 
 .card_text{
@@ -100,16 +102,6 @@ nav{
     
 }
 
-button{
-    margin-left: 30%;
-    margin-top: 5%;
-    width: 35%;
-    height: 20%;
-    background-color:#00ce7b;
-    border-radius: 5px;
-    border:none;
-
-}
 
 .description{
     font-size: small
@@ -117,7 +109,7 @@ button{
 }
 .desc{
     color: white;
-    margin-left: 30%;
+    margin-top: 5%;
 }
 
 label, #toggle
@@ -160,6 +152,27 @@ label, #toggle
         display: flex;
     }
 }
+
+
+
+ input {
+    width:50%;
+    text-align: center;
+    margin-left:25%;
+    margin-top: 5%;
+    border-radius:5px;
+    border:none;
+    height: 30px;
+}
+
+.shop-item__favorite-button{ 
+    max-width: 40px;
+   }
+   .fav path {
+     fill: red;
+     transition: all .3s ease;
+   }
+
 
 /* debut flip */
 
