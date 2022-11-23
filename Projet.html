@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LES NFT DES KOALAS</title>
     <link rel="stylesheet" href="main.css" />
+    <script src="bonus.js"></script>
+    <script src="favorites.js"></script>
+    <script src="functions.js"></script>
 </head>
 <script>
     function search() {
@@ -30,93 +33,6 @@
             }
         }
     }
-
-    //---------------------------------------------------- BONUS FUNCTION (sort by number of click with local storage) ----------------------------------------------------
-    const clickButtonAttr = 'dataNbClick';
-    class ClickList {
-        constructor() {
-            this.storageName = 'ClickList';
-            this.list = this.initList();
-        }
-        initList() {
-            if (window.localStorage.getItem(this.storageName)) {
-                const list = JSON.parse(window.localStorage.getItem(this.storageName));
-                console.log(list);
-                return list;
-            } else {
-                let obj = {};
-                return obj;
-            }
-        }
-        initButton(button) {
-            const id = parseInt(button.getAttribute(clickButtonAttr));
-            const test = {
-                Backcolour: 'red'
-            };
-            !inArrayClick(id, this.list) ? this.list[id] = 0 : this.list[id] = this.list[id] + 1;
-            this.updateList();
-            return button;
-        }
-        updateList() {
-            setLocalStorage(this.storageName, this.list);
-        }
-    }
-
-    function inArrayClick(element, array) {
-        return array.hasOwnProperty(element) == true;
-    }
-
-    const clickButtons = document.querySelectorAll('.card');
-    let clicks = new ClickList();
-    clickButtons.forEach(button => clicks.initButton(button));
-
-    //-------------------------------------------------------- FAVORITE LIST ----------------------------------------------------------------
-
-    const favoriteButtonAttr = 'data-add-to-favorite';
-    class FavoritesList {
-        constructor() {
-            this.storageName = 'favoritesList';
-            this.list = this.initList();
-        }
-        initList() {
-            if (window.localStorage.getItem(this.storageName)) {
-                const list = JSON.parse(window.localStorage.getItem(this.storageName));
-                console.log(list);
-                return list;
-            } else {
-                return [];
-            }
-        }
-        initButton(button) {
-            const id = parseInt(button.getAttribute(favoriteButtonAttr));
-            !inArray(id, this.list) ? this.list.push(id) : removeFromArray(id, this.list);
-            this.updateList();
-            button.classList.toggle('fav');
-            return button;
-        }
-
-        updateList() {
-            setLocalStorage(this.storageName, this.list);
-        }
-    }
-
-    function inArray(element, array) {
-        return array.indexOf(element) != -1;
-    }
-
-    function removeFromArray(element, array) {
-        array.splice(array.indexOf(element), 1);
-    }
-
-    function setLocalStorage(key, value) {
-        console.log(value)
-        window.localStorage.setItem(key, JSON.stringify(value));
-    }
-
-    const buttons = document.querySelectorAll('.shop-item__favorite-button');
-    let favorites = new FavoritesList();
-    buttons.forEach(button => favorites.initButton(button));
-
 </script>
 <header>
 
