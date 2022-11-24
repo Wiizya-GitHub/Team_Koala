@@ -68,14 +68,16 @@ nav{
     margin : 45px; 
     flex-wrap: wrap;
     align-items: center;
-    column-gap: 30px;
+    
+    width: 100%;
+    justify-content: space-around;
 }
 .card_nft{
     
     width: 300px;
     height: 450px;
     border-radius: 20px;
-    margin: 5em auto;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     
@@ -88,7 +90,7 @@ nav{
 .card_img {
     border-radius: 20px;
     text-align: center;
-    
+    margin-top: 10px;
     width: 200px;
     
 }
@@ -102,6 +104,16 @@ nav{
     
 }
 
+button{
+    margin-left: 30%;
+    margin-top: 5%;
+    width: 35%;
+    height: 20%;
+    background-color:#00ce7b;
+    border-radius: 5px;
+    border:none;
+
+}
 
 .description{
     font-size: small;
@@ -154,8 +166,6 @@ label, #toggle
     }
 }
 
-
-
  input {
     width:50%;
     text-align: center;
@@ -175,6 +185,9 @@ label, #toggle
    }
 
 
+   .ventes{
+    margin-top: 50%;
+   }
 /* debut flip */
 
 
@@ -187,8 +200,8 @@ label, #toggle
   }
   
   .card__inner {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     transition: transform 1s;
     transform-style: preserve-3d;
     cursor: pointer;
@@ -203,7 +216,7 @@ label, #toggle
   .card__face {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 95%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
@@ -228,8 +241,8 @@ label, #toggle
   }
   
   .card__content {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
   }
   
 /* fin flip*/
