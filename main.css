@@ -1,35 +1,85 @@
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	font-family: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
 }
 
-body{
-    background-color:#100C2D;
+body {
+    background-color: #100C2D;
 }
-header{
+
+header {
     background-color: #181341;
-    
+
 }
 
-nav{
+nav {
     width: 100%;
     background: #181341;
 }
 
-.main-nav{
+.main-nav {
     display: flex;
     list-style: none;
     padding: 0;
@@ -37,50 +87,49 @@ nav{
     margin-left: 18%;
 }
 
-.main-nav a{
+.main-nav a {
     margin: 10px;
     color: white;
-    display: block; 
-    padding: 15px; 
-    text-decoration: none; 
+    display: block;
+    padding: 15px;
+    text-decoration: none;
 }
 
-.main-nav li{
+.main-nav li {
     display: flex;
     align-items: center;
     font-family: 'Futura', sans-serif;
 }
 
 
-.main-nav li:hover{
+.main-nav li:hover {
     background-color: #181341;
 
 }
 
-.main-nav li:first-child:hover{ 
+.main-nav li:first-child:hover {
     background-color: none;
 }
 
 
-.card_NFT{
+.card_NFT {
     display: flex;
     flex-direction: row;
-    margin : 45px; 
+    margin: 45px;
     flex-wrap: wrap;
     align-items: center;
-    
-    width: 100%;
-    justify-content: space-around;
+    column-gap: 30px;
 }
-.card_nft{
-    
+
+.card_nft {
+
     width: 300px;
     height: 450px;
     border-radius: 20px;
-    margin: auto;
+    margin: 5em auto;
     display: flex;
     flex-wrap: wrap;
-    
+
 }
 
 .card_nft>* {
@@ -90,67 +139,96 @@ nav{
 .card_img {
     border-radius: 20px;
     text-align: center;
-    margin-top: 10px;
+
     width: 200px;
-    
+
 }
 
-.card_text{
+.card_text {
     text-align: center;
     color: white;
     width: 90%;
     margin: 0 auto;
-    
-    
-}
 
-button{
-    margin-left: 30%;
-    margin-top: 5%;
-    width: 35%;
-    height: 20%;
-    background-color:#00ce7b;
-    border-radius: 5px;
-    border:none;
 
 }
 
-.description{
+
+.description {
     font-size: small;
     color: white;
 
 }
-.desc{
+
+.desc {
     color: white;
     margin-top: 5%;
 }
 
-label, #toggle
-{
+label,
+#toggle {
     display: none;
 }
- 
-@media all and (max-width: 991px)
-{
-    nav
-    {
+
+ul#filters {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin: 45px;
+    margin-bottom: 0;
+    justify-content: center;
+}
+
+ul#filters li {
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+    list-style: none;
+    cursor: pointer;
+}
+
+ul#filters li[data-actif] {
+    background: #207a63;
+}
+
+button {
+    max-width: 50%;
+    padding: 8px 10px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    cursor: pointer;
+    max-height: 34px;
+    margin: 0 auto;
+}
+
+button:hover {
+    background: #100c2d;
+    color: #e9e9ed;
+    border-color: #100c2d;
+}
+
+@media all and (max-width: 991px) {
+    nav {
         height: 60px;
     }
- 
-    nav 
-    {
+
+    nav {
         display: none;
         flex-direction: column;
         background: #48435C;
         height: 220px;
     }
- 
-    nav  a {
+
+    nav a {
         width: 50%;
     }
- 
-    label 
-    {
+
+    label {
         width: 30px;
         display: flex;
         justify-content: center;
@@ -160,96 +238,91 @@ label, #toggle
         color: white;
         cursor: pointer;
     }
- 
-    #toggle:checked + nav {
+
+    #toggle:checked+nav {
         display: flex;
     }
 }
 
- input {
-    width:50%;
+
+
+input {
+    width: 50%;
     text-align: center;
-    margin-left:25%;
-    margin-top: 5%;
-    border-radius:5px;
-    border:none;
+    margin-left: 25%;
+    margin-top: 2em;
+    border-radius: 5px;
+    border: none;
     height: 30px;
 }
 
-.shop-item__favorite-button{ 
+.shop-item__favorite-button {
     max-width: 40px;
-   }
-   .fav path {
-     fill: red;
-     transition: all .3s ease;
-   }
+}
+
+svg.shop-item__favorite-button {
+    cursor: pointer;
+}
+.fav path {
+    fill: red;
+    transition: all .3s ease;
+}
 
 
-   .ventes{
-    margin-top: 50%;
-   }
 /* debut flip */
 
 
-  
-  .card {
+
+.card {
     margin: 50px auto 0;
     width: 400px;
     height: 600px;
     perspective: 1000px;
-  }
-  
-  .card__inner {
-    width: 90%;
-    height: 90%;
+}
+
+.card__inner {
+    width: 100%;
+    height: 100%;
     transition: transform 1s;
     transform-style: preserve-3d;
-    cursor: pointer;
     position: relative;
-  }
-  
-  .card__inner.is-flipped {
+}
+
+.card__inner.is-flipped {
     transform: rotateY(180deg);
-  }
-  
-  
-  .card__face {
+}
+
+
+.card__face {
     position: absolute;
     width: 100%;
-    height: 95%;
+    height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card__face--front {
+}
+
+.card__face--front {
     background-color: #025981;
     align-items: center;
     justify-content: center;
-  }
-  
-  .card__face--front h2 {
+}
+
+.card__face--front h2 {
     color: #FFF;
     font-size: 32px;
-  }
-  
-  .card__face--back {
+}
+
+.card__face--back {
     background-color: #207a63;
     transform: rotateY(180deg);
-  }
-  
-  .card__content {
-    width: 90%;
-    height: 90%;
-  }
-  
+}
+
+.card__content {
+    width: 100%;
+    height: 100%;
+}
+
 /* fin flip*/
-
-
-
-
-
-
-
