@@ -11,7 +11,3 @@
         console.log(value)
         window.localStorage.setItem(key, JSON.stringify(value));
     }
-
-    function removeCards() {
-        document.getElementById("nft").innerHTML = '';
-    }
