@@ -78,8 +78,8 @@ async function displayNFC(items,pages) {
                                     <img class="card_img" src ="${image_url}">
                                 </div>
                                     <div class="card_text">
-                                        <p class="desc"> ${name}</p>
-                                        <p class="owner"> ${username}</p>
+                                        <p class="desc"> Nom du NFT : ${name}</p>
+                                        <p class="owner"> Créateur : ${username}</p>
                                     </div>
                                     <svg onclick="favorites.initButton(this);" class="shop-item__favorite-button ${classfav}" data-add-to-favorite="${id}" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455 455" style="enable-background:new 0 0 455 455;" xml:space="preserve">
                                     <style type="text/css">
