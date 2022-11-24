@@ -1,5 +1,6 @@
-async function getNFT() {
-    items = await fetch(`https://awesome-nft-app.herokuapp.com/`)
+async function getNFT(nbrpages) {
+    
+    items = await fetch('https://awesome-nft-app.herokuapp.com/?page=' + nbrpages)
         .then((res) => res.json())
         .then((res) => {
             return res.assets
@@ -11,18 +12,21 @@ async function getNFT() {
 
     if (items.length === 0) { return }
     return items;
+    
 }
 
 async function displayAllNFC() {
-    await getNFT()
-    displayNFC(items)
+    for (pages = 1; pages <= 5; pages++){
+        await getNFT(pages)
+        displayNFC(items,pages)
+    }
 }
 
-async function displayNFC(items) {
+async function displayNFC(items,pages) {
     console.log(items)
     let newitems = [];
     const osContainer = document.getElementById('nft')
-    await removeCards()
+    //await removeCards()
     //Sort NFT by number of click save in localstorage
     if (window.localStorage.getItem('ClickList')) {
         const list = JSON.parse(window.localStorage.getItem('ClickList'));
@@ -48,6 +52,9 @@ async function displayNFC(items) {
         newitems = items;
     };
     /* console.log(newitems) */
+    if(pages === 1) {
+        osContainer.innerHTML=''
+    }
     newitems.forEach((nft) => {
         const { name, image_url, description, sales, id, contract: { created_at }, creator: { username } } = nft
         const newElement = document.createElement('div')
@@ -67,7 +74,9 @@ async function displayNFC(items) {
                         <div class="card__inner">
                             <div class="card__face card__face--front">
                                 <div class="card_nft card__face--front">
+                                <div class= "image"> 
                                     <img class="card_img" src ="${image_url}">
+                                </div>
                                     <div class="card_text">
                                         <p class="desc"> ${name}</p>
                                         <p class="owner"> ${username}</p>
